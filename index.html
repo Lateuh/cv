@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<title>Alexy - CV</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Civic - CV Resume">
-	<meta name="keywords" content="resume, civic, onepage, creative, html, student">
+	<meta name="description" content="CV Resume">
+	<meta name="keywords" content="resume, onepage, creative, html, student">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->   
 	<link href="img/icon_cv.png" rel="shortcut icon"/>
@@ -40,7 +40,7 @@
 				<div class="col-md-4">
 					<div class="site-logo">
 						<h2><a href="index_en.html">Hello !</a></h2>
-						<p>(english here)</p>
+						<p>(english <a href="index_en.html">here</a>)</p>
 					</div>
 				</div>
 				<div class="col-md-8 text-md-right header-buttons">
@@ -235,7 +235,7 @@
 									<div class="circle-progress">
 										<div id="progress1" class="prog-circle"></div>
 										<div class="progress-info">
-											<h2>76%</h2>
+											<h2>84%</h2>
 										</div>
 										<div class="prog-title">
 											<h3>Méticuleux</h3>
@@ -251,7 +251,7 @@
 									<div class="circle-progress">
 										<div id="progress2" class="prog-circle"></div>
 										<div class="progress-info">
-											<h2>84%</h2>
+											<h2>93%</h2>
 										</div>
 										<div class="prog-title">
 											<h3>Curieux</h3>
@@ -368,7 +368,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<input id="sujet" type="text" placeholder="Sujet">
-								<textarea placeholder="Message"></textarea>
+								<textarea id="corps" placeholder="Message"></textarea>
 							</div>
 						</div>
 						<div class="text-md-right">
@@ -395,8 +395,20 @@
 		function sendMail() {
     		var inputSujet = document.getElementById("sujet").value;
     		var inputCorps = document.getElementById("corps").value;
-    		window.open("mailto:alexy.lefevre@gmail.com?subject="+encodeURI(inputSujet)+"&body="+encodeURI(inputCorps));
+    		if(inputSujet === "" && inputCorps === ""){
+    			window.open("mailto:alexy.lefevre@gmail.com?subject="+encodeURI("Contact CV")+"&body="+encodeURI("Bonjour Alexy, votre CV nous intéresse. Je souhaiterais discuter avec vous."));
+
+    		}else if(inputSujet === "" && inputCorps !== ""){
+    			window.open("mailto:alexy.lefevre@gmail.com?subject="+encodeURI("Contact CV")+"&body="+encodeURI(inputCorps));
+
+    		}else if(inputSujet !== "" && inputCorps === ""){
+    			window.open("mailto:alexy.lefevre@gmail.com?subject="+encodeURI(inputSujet)+"&body="+encodeURI("Bonjour Alexy, votre CV nous intéresse. Je souhaiterais discuter avec vous."));
+
+    		}else {
+    			window.open("mailto:alexy.lefevre@gmail.com?subject="+encodeURI(inputSujet)+"&body="+encodeURI(inputCorps));
+    		}
 		}
+
 	</script>
 
 

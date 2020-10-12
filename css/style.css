@@ -159,11 +159,13 @@ ol {
 	border: 2px solid #40424a;
 	color: #40424a;
 	font-weight: 700;
+	cursor: pointer;
 }
 
 .site-btn:hover {
 	color: #40424a;
 }
+
 
 .circle-progress {
 	text-align: center;
